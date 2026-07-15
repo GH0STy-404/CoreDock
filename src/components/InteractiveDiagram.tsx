@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils/cn';
 
 interface DiagramPart {
@@ -115,7 +114,7 @@ export const InteractiveDiagram: React.FC = () => {
       <div className="absolute inset-0 bg-telemetry-nodes opacity-5 pointer-events-none"></div>
       
       {/* SVG (7 Cols) */}
-      <div className="lg:col-span-7 flex justify-center relative select-none">
+      <div className="md:col-span-7 flex justify-center relative select-none">
         <svg
           viewBox="0 0 400 400"
           className="w-full max-w-[380px] h-auto stroke-text-muted fill-none text-text-muted"
@@ -223,16 +222,11 @@ export const InteractiveDiagram: React.FC = () => {
       </div>
 
       {/* Content panel */}
-      <div className="lg:col-span-5 h-[340px] flex flex-col justify-between">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPart.id}
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.2 }}
-            className="flex flex-col h-full justify-between"
-          >
+      <div className="md:col-span-5 flex flex-col justify-between">
+        <div
+          key={currentPart.id}
+          className="flex flex-col h-full justify-between"
+        >
             <div>
               <div className="text-[10px] font-sans font-bold tracking-wider text-brand-primary uppercase mb-1.5">
                 // PLATFORM MODULE: {currentPart.id.toUpperCase()}
@@ -276,8 +270,7 @@ export const InteractiveDiagram: React.FC = () => {
                 </button>
               ))}
             </div>
-          </motion.div>
-        </AnimatePresence>
+        </div>
       </div>
     </div>
   );

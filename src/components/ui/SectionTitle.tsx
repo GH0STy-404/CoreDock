@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
-import { fadeInUp } from '../../animations/fade';
 
 interface SectionTitleProps {
   title: string;
@@ -25,11 +23,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp(0.4, 0, 12)}
+    <div
       className={cn("flex flex-col mb-10", alignment[align], className)}
     >
       {tagline && (
@@ -50,7 +44,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
       
       {/* Simple, sleek line separator */}
       <div className="w-12 h-[2px] bg-brand-primary mt-5"></div>
-    </motion.div>
+    </div>
   );
 };
 
