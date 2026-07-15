@@ -60,14 +60,14 @@ export const Home: React.FC = () => {
 
       {/* 1. HERO FOLD & LEAD CAPTURE (2-Column high-conversion layout) */}
       <section className="relative pt-8 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: value prop & stats (7 Cols) */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer(0.08, 0.05)}
-            className="lg:col-span-7 space-y-6"
+            className="md:col-span-7 space-y-6"
           >
             {/* System Status Tag */}
             <motion.div variants={fadeInUp(0.4, 0, 10)} className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export const Home: React.FC = () => {
             {/* Core Value Statement */}
             <motion.h1
               variants={fadeInUp(0.4, 0, 10)}
-              className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight text-text-primary"
+              className="font-outfit font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight text-text-primary"
             >
               High-Precision CNC-Grade <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">
@@ -137,7 +137,7 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-            className="lg:col-span-5"
+            className="md:col-span-5"
           >
             <div className="w-full bg-glass rounded border border-border-glass p-6 relative shadow-orange-glow overflow-hidden">
               <div className="absolute inset-0 bg-telemetry-nodes opacity-15 pointer-events-none"></div>

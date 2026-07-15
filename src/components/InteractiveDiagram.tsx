@@ -111,7 +111,7 @@ export const InteractiveDiagram: React.FC = () => {
   const currentPart = DIAGRAM_PARTS.find((p) => p.id === selectedPartId) || DIAGRAM_PARTS[0];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-bg-surface/50 rounded-lg border border-border-primary p-6 relative">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-bg-surface/50 rounded-lg border border-border-primary p-6 relative">
       <div className="absolute inset-0 bg-telemetry-nodes opacity-5 pointer-events-none"></div>
       
       {/* SVG (7 Cols) */}

@@ -108,10 +108,10 @@ export const PrinterDetail: React.FC = () => {
       />
 
       {/* 1. PROTO HERO */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         
         {/* Detail specs (7 Cols) */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="md:col-span-7 space-y-6">
           <div className="flex flex-wrap gap-2">
             <TechBadge variant="accent">SYSTEM STATUS: VALIDATED PROTO</TechBadge>
             <TechBadge variant="outline">ISO 9001 COMPLIANT</TechBadge>
@@ -144,7 +144,7 @@ export const PrinterDetail: React.FC = () => {
         </div>
 
         {/* CAD Card showing secondary workspace photo (5 Cols) */}
-        <div className="lg:col-span-5 flex justify-center">
+        <div className="md:col-span-5 flex justify-center">
           <div className="w-full max-w-[340px] aspect-[4/5] bg-glass rounded border border-border-glass p-5 relative flex flex-col justify-between overflow-hidden shadow-orange-glow">
             <div className="absolute inset-0 bg-telemetry-nodes opacity-15 pointer-events-none"></div>
             

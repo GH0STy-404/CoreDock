@@ -50,10 +50,10 @@ export const Contact: React.FC = () => {
         subtitle="Establish communications with Voxel Dynamics industrial sales desks or request operator maintenance contracts."
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         
         {/* Contact details (5 Cols) */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="md:col-span-5 space-y-6">
           
           <GlassCard hoverEffect={false} className="space-y-4">
             <h4 className="font-outfit text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -128,7 +128,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Form (7 Cols) */}
-        <div className="lg:col-span-7">
+        <div className="md:col-span-7">
           <form
             onSubmit={handleSubmit}
             className="border border-border-primary rounded bg-bg-surface/30 p-6 space-y-6 relative"

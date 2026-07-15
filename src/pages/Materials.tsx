@@ -68,7 +68,7 @@ export const Materials: React.FC = () => {
       </div>
 
       {/* Materials grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredMaterials.map((mat) => (
           <GlassCard key={mat.id} className="flex flex-col justify-between h-full group">
             

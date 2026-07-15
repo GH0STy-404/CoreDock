@@ -49,12 +49,12 @@ export const Applications: React.FC = () => {
         {filteredApps.map((app) => (
           <div
             key={app.id}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-bg-surface/30 border border-border-primary rounded-lg p-6 relative overflow-hidden"
+            className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch bg-bg-surface/30 border border-border-primary rounded-lg p-6 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-telemetry-nodes opacity-5 pointer-events-none"></div>
 
             {/* Metrics and CAD Image column (4 Cols) */}
-            <div className="lg:col-span-4 space-y-4 flex flex-col">
+            <div className="md:col-span-4 space-y-4 flex flex-col">
               <div className="flex justify-between items-center pb-2 border-b border-border-primary/40">
                 <TechBadge variant="accent">{app.industry}</TechBadge>
                 <span className="text-[9px] font-mono text-text-muted">CASE_ID: {app.id.toUpperCase()}</span>
@@ -107,7 +107,7 @@ export const Applications: React.FC = () => {
             </div>
 
             {/* Details narrative column (8 Cols) */}
-            <div className="lg:col-span-8 space-y-6">
+            <div className="md:col-span-8 space-y-6">
               
               {/* Part specifications block */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-bg-base/50 border border-border-primary/60 rounded p-4 text-[10px] text-text-secondary font-mono">
