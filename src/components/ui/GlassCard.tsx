@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
-import { cardHover } from '../../animations/hover';
 
 interface GlassCardProps {
   children: React.ReactNode;
@@ -17,11 +15,11 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   onClick
 }) => {
   return (
-    <motion.div
-      whileHover={hoverEffect ? cardHover : undefined}
+    <div
       onClick={onClick}
       className={cn(
-        "bg-glass rounded-lg p-6 relative overflow-hidden transition-colors duration-300 border border-border-glass",
+        "bg-glass rounded-lg p-6 relative overflow-hidden transition-all duration-300 border border-border-glass",
+        hoverEffect && "hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-[0_12px_30px_rgba(234,88,12,0.15)]",
         onClick && "cursor-pointer",
         className
       )}
@@ -34,7 +32,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
       <span className="absolute bottom-0 left-0 w-[4px] h-[4px] bg-border-primary rounded-tr"></span>
       
       <div className="relative z-10">{children}</div>
-    </motion.div>
+    </div>
   );
 };
 

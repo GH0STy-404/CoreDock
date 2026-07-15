@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
-import { buttonHover } from '../../animations/hover';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
@@ -17,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
   glow = false,
   ...props
 }) => {
-  const baseStyle = "relative inline-flex items-center justify-center font-outfit font-semibold tracking-wide uppercase transition-all duration-300 rounded border cursor-pointer select-none active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden";
+  const baseStyle = "relative inline-flex items-center justify-center font-outfit font-semibold tracking-wide uppercase transition-all duration-300 rounded border cursor-pointer select-none active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(234,88,12,0.25)]";
   
   const variants = {
     primary: "bg-brand-primary text-white border-brand-primary hover:bg-transparent hover:text-brand-primary",
@@ -34,8 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <motion.button
-      whileHover={buttonHover}
+    <button
       className={cn(
         baseStyle,
         variants[variant],
@@ -43,10 +40,10 @@ export const Button: React.FC<ButtonProps> = ({
         glow && variant === 'primary' && "shadow-orange-glow",
         className
       )}
-      {...(props as any)}
+      {...props}
     >
       <span className="relative z-10">{children}</span>
-    </motion.button>
+    </button>
   );
 };
 
