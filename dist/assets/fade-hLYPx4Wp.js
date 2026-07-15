@@ -1,0 +1,1 @@
+const n=(i=.5,t=0,a=24)=>({hidden:{opacity:0,y:a},visible:{opacity:1,y:0,transition:{duration:i,delay:t,ease:[.16,1,.3,1]}}}),s=(i=.08,t=0)=>({hidden:{opacity:1},visible:{opacity:1,transition:{staggerChildren:i,delayChildren:t}}});export{n as f,s};

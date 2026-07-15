@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: var(--color-bg-base);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-glass: var(--color-bg-glass);
+  --color-border-primary: var(--color-border-primary);
+  --color-border-glass: var(--color-border-glass);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-accent: var(--color-brand-accent);
+  --color-metallic-silver: var(--color-metallic-silver);
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  --color-bg-base: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-glass: rgba(255, 255, 255, 0.85);
+  --color-border-primary: #CBD5E1;
+  --color-border-glass: rgba(15, 23, 42, 0.12);
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-brand-primary: #EA580C;
+  --color-brand-accent: #F97316;
+  --color-metallic-silver: #475569;
+  --color-subgrid-line: rgba(15, 23, 42, 0.025);
+}
+
+:root.dark {
+  --color-bg-base: #0A0A0A;
+  --color-bg-surface: #121212;
+  --color-bg-glass: rgba(18, 18, 18, 0.85);
+  --color-border-primary: #27272A;
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  --color-brand-primary: #EA580C;
+  --color-brand-accent: #F97316;
+  --color-metallic-silver: #E2E8F0;
+  --color-subgrid-line: rgba(255, 255, 255, 0.015);
+}
+
+
+
+/* Global Reset & Smooth Theme transitions */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+html, body, body * {
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-primary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}
+
+/* Fine B2B Grid Background */
+.cad-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, var(--color-border-glass) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border-glass) 1px, transparent 1px);
+}
+
+.cad-subgrid {
+  background-size: 10px 10px;
+  background-image: 
+    linear-gradient(to right, var(--color-subgrid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-subgrid-line) 1px, transparent 1px);
+}
+
+
+
+/* Glassmorphism */
+.bg-glass {
+  background-color: var(--color-bg-glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--color-border-glass);
+}
+
+/* Clean Telemetry Backdrop dot pattern */
+.bg-telemetry-nodes {
+  background-image: radial-gradient(var(--color-border-glass) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Accent Glows */
+.text-orange-glow {
+  text-shadow: 0 0 8px rgba(234, 88, 12, 0.25);
+}
+
+.shadow-orange-glow {
+  box-shadow: 0 4px 20px rgba(234, 88, 12, 0.12);
+}
+
+/* Disable transitions during view transitions to ensure correct layout screenshots */
+.theme-transitioning,
+.theme-transitioning * {
+  transition: none !important;
+}
+
+/* Smooth View Transitions for theme changes */
+::view-transition-old(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  opacity: 1 !important;
+}
+
+::view-transition-new(root) {
+  animation: themeCircleReveal 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  mix-blend-mode: normal;
+}
+
+@keyframes themeCircleReveal {
+  from {
+    clip-path: circle(0% at var(--click-x, 50%) var(--click-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--click-x, 50%) var(--click-y, 50%));
+  }
+}
