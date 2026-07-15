@@ -44,7 +44,7 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 
       {/* HEADER NAVBAR */}
       <header className="sticky top-0 z-40 w-full bg-glass border-b border-border-glass backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 select-none group flex-shrink-0">
@@ -67,14 +67,14 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
             </div>
           </Link>
 
-          {/* DESKTOP NAVIGATION — shown at lg (1024px+) */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {/* DESKTOP NAVIGATION — shown at md (768px+) */}
+          <nav className="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-7">
             {navigation.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-[11px] font-outfit uppercase tracking-wider transition-all duration-300 relative py-1 whitespace-nowrap ${
+                  `text-[10px] lg:text-[11px] font-outfit uppercase tracking-wider transition-all duration-300 relative py-1 whitespace-nowrap ${
                     isActive
                       ? "text-brand-primary font-bold"
                       : "text-text-secondary hover:text-text-primary"
@@ -94,7 +94,7 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           </nav>
 
           {/* RIGHT ACTION BARS — desktop only */}
-          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             
             {/* Theme toggle */}
             <button
@@ -109,15 +109,15 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
             {/* Request Datasheet CTA */}
             <Link
               to="/contact"
-              className="px-4 py-1.5 rounded bg-brand-primary text-white border border-brand-primary font-outfit font-semibold tracking-wide text-xs uppercase hover:bg-transparent hover:text-brand-primary transition-all duration-300 shadow-orange-glow whitespace-nowrap"
+              className="px-3 lg:px-4 py-1.5 rounded bg-brand-primary text-white border border-brand-primary font-outfit font-semibold tracking-wide text-[10px] lg:text-xs uppercase hover:bg-transparent hover:text-brand-primary transition-all duration-300 shadow-orange-glow whitespace-nowrap"
             >
               Request Datasheet
             </Link>
 
           </div>
 
-          {/* MOBILE CONTROLS — shown below lg */}
-          <div className="lg:hidden flex items-center gap-2 flex-shrink-0">
+          {/* MOBILE CONTROLS — shown below md */}
+          <div className="md:hidden flex items-center gap-2 flex-shrink-0">
             {/* Theme toggle visible on mobile */}
             <button
               onClick={(e) => toggleTheme(e)}
@@ -139,9 +139,9 @@ export const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      {/* MOBILE DRAWER — shown below lg */}
+      {/* MOBILE DRAWER — shown below md */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-30 bg-bg-base lg:hidden flex flex-col p-6 animate-fadeIn overflow-y-auto">
+        <div className="fixed inset-0 top-16 z-30 bg-bg-base md:hidden flex flex-col p-6 animate-fadeIn overflow-y-auto">
           <div className="flex-grow space-y-1">
             {navigation.map((item) => (
               <Link
