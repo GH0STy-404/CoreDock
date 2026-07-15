@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { CheckCircle, Award } from 'lucide-react';
 import { BRAND_CONFIG } from '../config/brand';
-import { fadeInUp, staggerContainer } from '../animations/fade';
 import SEO from '../components/SEO';
 import Button from '../components/ui/Button';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
@@ -52,54 +50,40 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       <SEO
         title="Industrial Additive Manufacturing Systems"
         description="Voxel Dynamics manufactures high-precision industrial 3D printers and carbon-fiber gantry systems. 99.9% operational uptime."
       />
 
       {/* 1. HERO FOLD & LEAD CAPTURE (2-Column high-conversion layout) */}
-      <section className="relative pt-8 pb-12">
+      <section className="relative pt-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: value prop & stats (7 Cols) */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer(0.08, 0.05)}
-            className="md:col-span-7 space-y-6"
-          >
+          <div className="md:col-span-7 space-y-5">
             {/* System Status Tag */}
-            <motion.div variants={fadeInUp(0.4, 0, 10)} className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <span className="px-2.5 py-0.5 rounded border border-brand-primary/20 bg-brand-primary/5 text-brand-primary font-outfit font-semibold text-[10px] tracking-wider uppercase flex items-center gap-1.5">
                 <Award className="w-3.5 h-3.5" />
                 <span>COREDOCK APEX-300 PROTOTYPE VALIDATED</span>
               </span>
-            </motion.div>
+            </div>
 
             {/* Core Value Statement */}
-            <motion.h1
-              variants={fadeInUp(0.4, 0, 10)}
-              className="font-outfit font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight text-text-primary"
-            >
+            <h1 className="font-outfit font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight text-text-primary">
               High-Precision CNC-Grade <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">
                 Additive Manufacturing Gantries
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={fadeInUp(0.4, 0, 10)}
-              className="text-text-secondary text-xs sm:text-sm max-w-xl leading-relaxed"
-            >
+            <p className="text-text-secondary text-sm max-w-xl leading-relaxed">
               Voxel Dynamics designs and builds high-stability thermoplastic extrusion platforms engineered for aerospace components, carbon-fiber composite tooling, and high-precision prototyping laboratories.
-            </motion.p>
+            </p>
 
             {/* Credibility Stats counters */}
-            <motion.div
-              variants={fadeInUp(0.4, 0, 10)}
-              className="grid grid-cols-3 gap-4 border-y border-border-primary/40 py-6 max-w-xl"
-            >
+            <div className="grid grid-cols-3 gap-4 border-y border-border-primary/40 py-5 max-w-xl">
               {credibilityStats.map((stat, i) => (
                 <div key={i} className="text-left border-l border-border-primary/60 pl-3 first:border-l-0 first:pl-0">
                   <div className="text-xl sm:text-2xl font-black text-brand-primary font-outfit flex items-baseline">
@@ -114,13 +98,10 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Key capabilities list */}
-            <motion.div
-              variants={fadeInUp(0.4, 0, 10)}
-              className="space-y-2.5 text-xs text-text-secondary max-w-lg"
-            >
+            <div className="space-y-2.5 text-xs text-text-secondary max-w-lg">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-brand-primary flex-shrink-0" />
                 <span>Closed-loop servo feedback for sub-50µm gantry positioning.</span>
@@ -129,16 +110,11 @@ export const Home: React.FC = () => {
                 <CheckCircle className="w-4 h-4 text-brand-primary flex-shrink-0" />
                 <span>350°C liquid-cooled toolhead for printing Nylon, CF, and PC.</span>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column: Embedded lead-capture inquiry form (5 Cols) */}
-          <motion.div
-            initial={{ opacity: 0, x: 15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-            className="md:col-span-5"
-          >
+          <div className="md:col-span-5">
             <div className="w-full bg-glass rounded border border-border-glass p-6 relative shadow-orange-glow overflow-hidden">
               <div className="absolute inset-0 bg-telemetry-nodes opacity-15 pointer-events-none"></div>
 
@@ -146,7 +122,7 @@ export const Home: React.FC = () => {
                 // SPECIFICATION REQUEST
               </div>
               <h3 className="font-outfit text-base font-bold text-text-primary mb-4 uppercase tracking-wide">
-                Get Expert Proposal & Quote
+                Get Expert Proposal &amp; Quote
               </h3>
 
               <form onSubmit={handleLeadSubmit} className="space-y-4 relative z-10">
@@ -249,7 +225,7 @@ export const Home: React.FC = () => {
                 )}
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
