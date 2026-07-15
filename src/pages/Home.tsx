@@ -59,8 +59,8 @@ export const Home: React.FC = () => {
       />
 
       {/* 1. HERO FOLD & LEAD CAPTURE (2-Column high-conversion layout) */}
-      <section className="min-h-[80vh] flex flex-col justify-center relative py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="relative pt-8 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: value prop & stats (7 Cols) */}
           <motion.div
